@@ -1,3 +1,18 @@
+slots:
+  name:
+    type: text
+    value: "Mike"
+  age:
+    type: text
+    value: "36"
+  gender:
+    type: text
+    value: 
+  history:
+    type: text
+  acutet:
+    type: text
+
 intents:
   - greet
   - goodbye
@@ -5,6 +20,8 @@ intents:
   - mood_deny
   - mood_great
   - mood_unhappy
+  - mood_affirm
+  - mood_decline
   
 actions:
 - utter_greet
@@ -15,13 +32,25 @@ actions:
 - utter_cheer_up
 - utter_how_long
 - utter_fetching
-- actions.ActionPatientInfo
-
+- utter_acutet
+- actions.ActionPatientInfoRecurrence
+- actions.ActionPatientGeneralInfo
 
 templates:
   utter_greet:
   - text: "Hey! How are you?"
   
+  utter_acutet:
+  - text: "For how many days have you been dealing with depression?"
+  
+  utter_age:
+  - text: "What's your age?"
+  
+  utter_gender:
+  - text: "Are you a male or a female?"
+  
+  utter_time_for_recurrence:
+  - text:  ""
   utter_history_question:
   - text: "Did you ever have a history of such events?"
   
@@ -36,6 +65,20 @@ templates:
   
   utter_fetching:
   - text: "Getting patient info"
+  
+  utter_approve:
+  - text: "Yes"
+  - text: "Ya"
+  - text: "Yeah"
+  - text: "Hmmm"
+  - text: "Yup"
+  
+    utter_decline:
+  - text: "No"
+  - text: "Nope"
+  - text: "Nah"
+  - text: "Hmm"
+  
   
   utter_goodbye:
   - text: "Bye"
