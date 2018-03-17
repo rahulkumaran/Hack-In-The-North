@@ -21,4 +21,4 @@ def predict_outcome():
 	accuracy = rf.score(input_test, expected_op_test)
 	print("accuracy is {}%".format(accuracy*100))
 
-	joblib.dump(rf, "Outcome_Model", compress = 9)		#Stores the machine learning model by the name "Outcome_Model"
+	joblib.dump(rf, "models/Outcome_Model", compress = 9)		#Stores the machine learning model by the name "Outcome_Model"
