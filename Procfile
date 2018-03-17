@@ -1,1 +1,1 @@
-web: gunicorn ad-ai.wsgi
+web: gunicorn app:app
