@@ -20,6 +20,8 @@ class ActionPatientInfo(Action):
            return "patient_consultation_info"
         
        def run(self, dispatcher, tracker, domain):
+           dispatcher.utter_message("Getting patient info../")
+           
            
             
             

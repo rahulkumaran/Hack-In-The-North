@@ -16,6 +16,9 @@ actions:
 - utter_history_question
 - utter_cheer_up
 - utter_how_long
+- utter_fetching
+- actions.ActionPatientInfo
+
 
 templates:
   utter_greet:
@@ -32,6 +35,9 @@ templates:
 
   utter_happy:
   - text: "Great carry on!"
-
+  
+  utter_fetching:
+  - text: "Getting patient info"
+  
   utter_goodbye:
   - text: "Bye"
