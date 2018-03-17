@@ -1,0 +1,17 @@
+{
+  "features": [
+    "intent_greet", 
+    "intent_goodbye", 
+    "intent_mood_affirm", 
+    "intent_mood_deny", 
+    "intent_mood_great", 
+    "intent_mood_unhappy", 
+    "prev_action_listen", 
+    "prev_action_restart", 
+    "prev_utter_greet", 
+    "prev_utter_happy", 
+    "prev_utter_goodbye", 
+    "prev_utter_next_question", 
+    "prev_utter_history_question"
+  ]
+}
