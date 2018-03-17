@@ -12,6 +12,8 @@ actions:
 - utter_goodbye
 - utter_next_question
 - utter_history_question
+- utter_cheer_up
+- utter_how_long
 
 templates:
   utter_greet:
@@ -23,6 +25,9 @@ templates:
   utter_next_question:
   - text : "Is there any reason for this?"
   
+  utter_cheer_up:
+  - text: "Don't worry. It's going to be alright. Just follow the instruction of the psychiatrist"
+
   utter_happy:
   - text: "Great carry on!"
 
