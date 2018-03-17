@@ -30,6 +30,7 @@
 - see you later
 - see ya
 - see you
+-
 
 ## intent:mood_affirm
 - yes
@@ -37,6 +38,9 @@
 - of course
 - that sounds good
 - correct
+- sure
+- yup
+- yesss
 
 ## intent:mood_deny
 - no
@@ -44,6 +48,10 @@
 - I don't think so
 - don't like that
 - no way
+- nope
+- nah
+- nooo
+- don't want it
 
 
 ## intent:mood_great
@@ -62,6 +70,26 @@
 - so so perfect
 - so good
 - so perfect
+- I'm extremely happy
+- Life's going good
+- I'm really happy with myself
+- I'm good
+- good feels
+- good
+- perfect feeling
+- feeling great
+- I'm in a state of satisfaction
+- I'm well
+- All good
+- Feeling positive
+- Positive vibes
+- feeling good about myself
+- always happy
+- life's good
+- I feel amazing
+- Happy happy vibes
+- 
+
 
 ## intent:mood_unhappy
 - my day was horrible
@@ -79,5 +107,22 @@
 - so saad
 - so sad
 - bad
-- 
-
+- horrible
+- my day was bad
+- I feel so horrible about myself sometimes
+- I feel so horrible about myself always.
+- I'm feeling very depressed
+- I'm depressed
+- I'm disappointed with myself
+- I want to die
+- I don't want to live
+- I'm so frsutrated with life
+- I'm a horrible person
+- I really don't feel like spending time with anyone
+- I feel lonely
+- I am always alone
+- I don't want anyone in my life.
+- I had a break up
+- I don't get good vibes at all
+- I really have no interest to live
+- I'm extremely unhappy
