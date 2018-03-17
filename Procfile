@@ -1,1 +1,1 @@
-web: gunicorn hostelmanager.wsgi
+web: gunicorn ad-ai.wsgi
