@@ -37,5 +37,19 @@ templates:
   utter_fetching:
   - text: "Getting patient info"
   
+  utter_approve:
+  - text: "Yes"
+  - text: "Ya"
+  - text: "Yeah"
+  - text: "Hmmm"
+  - text: "Yup"
+  
+    utter_decline:
+  - text: "No"
+  - text: "Nope"
+  - text: "Nah"
+  - text: "Hmm"
+  
+  
   utter_goodbye:
   - text: "Bye"
