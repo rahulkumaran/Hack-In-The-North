@@ -15,17 +15,32 @@ from outcome import predict_outcome
       #result = db.query(q)
 
       #return [SlotSet("matches", result if result is not None else [])]
-    
-class ActionPatientInfo(Action):
-       def name(self):
-           return "patient_consultation_info"
+f = []    
+
+class ActionPatientInfoRecurrence(Action):
+       
+    def name(self):
+        return "patient_consultation_info"
         
-       def run(self, dispatcher, tracker, domain):
-           dispatcher.utter_message("Getting patient info../")
-           outcome = predict_outcome()
-           return outcome
-
-
+    def run(self, dispatcher, tracker, domain):
+        dispatcher.utter_message("Getting patient depression recurrence../")
+        outcome = predict_outcome()
+        f.append(outcome)
+        
+class ActionPatientGeneralInfo(Action):
+    def name(self):
+        return "patient_general_info"
+            
+    def run(self, dispatcher, tracker, domain):
+        dispatcher.utter_message("Patient's general info")
+        f.append(tracker.get_slot(name))
+        f.append(tracker.get_slot(age))
+        f.append(tracker.get_slot(gender))
+        f.append(tracker.get_slot(history))
+        
+        
+                    
+  
            
            
            

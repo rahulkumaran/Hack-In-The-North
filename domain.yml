@@ -1,3 +1,15 @@
+slots:
+  name:
+    type: text
+  age:
+    type: text
+  gender:
+    type: text
+  history:
+    type: text
+  acutet:
+    type: text
+
 intents:
   - greet
   - goodbye
@@ -5,6 +17,8 @@ intents:
   - mood_deny
   - mood_great
   - mood_unhappy
+  - mood_affirm
+  - mood_decline
   
 actions:
 - utter_greet
@@ -15,8 +29,8 @@ actions:
 - utter_cheer_up
 - utter_how_long
 - utter_fetching
-- actions.ActionPatientInfo
-
+- actions.ActionPatientInfoRecurrence
+- actions.ActionPatientGeneralInfo
 
 templates:
   utter_greet:
