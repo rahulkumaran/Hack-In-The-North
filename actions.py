@@ -24,6 +24,8 @@ class ActionPatientInfo(Action):
            dispatcher.utter_message("Getting patient info../")
            outcome = predict_outcome()
            return outcome
+
+
            
            
            

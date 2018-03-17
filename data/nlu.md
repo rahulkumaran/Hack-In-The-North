@@ -30,7 +30,6 @@
 - see you later
 - see ya
 - see you
--
 
 ## intent:mood_affirm
 - yes
@@ -79,4 +78,6 @@
 - extremly sad
 - so saad
 - so sad
+- bad
+- 
 
