@@ -19,6 +19,7 @@ def predict_outcome():
 	rf.fit(input_train, expected_op_train)			#Getting the best fit for the curve by using the fit function
 
 	accuracy = rf.score(input_test, expected_op_test)
-	print("accuracy is {}%".format(accuracy*100))
+	joblib.dump(rf, "models/Outcome_Model", compress = 9)	
+	return accuracy*100
 
-	joblib.dump(rf, "models/Outcome_Model", compress = 9)		#Stores the machine learning model by the name "Outcome_Model"
+	#Stores the machine learning model by the name "Outcome_Model"

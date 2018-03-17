@@ -1,5 +1,6 @@
 from rasa_core.actions import Action
 from rasa_core.events import SlotSet
+from outcome import predict_outcome
 
 #class ActionCheckRestaurants(Action):
  #  def name(self):
@@ -21,6 +22,9 @@ class ActionPatientInfo(Action):
         
        def run(self, dispatcher, tracker, domain):
            dispatcher.utter_message("Getting patient info../")
+           outcome = predict_outcome()
+           return outcome
+           
            
            
             
