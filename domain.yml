@@ -1,0 +1,32 @@
+intents:
+  - greet
+  - goodbye
+  - mood_affirm
+  - mood_deny
+  - mood_great
+  - mood_unhappy
+  
+actions:
+- utter_greet
+- utter_cheer_up
+- utter_did_that_help
+- utter_happy
+- utter_goodbye
+- utter_next_question
+- utter_history_question
+
+templates:
+  utter_greet:
+  - text: "Hey! How are you?"
+  
+  utter_history_question:
+  - text: "Did you ever have a history of such events?"
+  
+  utter_next_question:
+  - text : "Is there any reason for this?"
+  
+  utter_happy:
+  - text: "Great carry on!"
+
+  utter_goodbye:
+  - text: "Bye"
