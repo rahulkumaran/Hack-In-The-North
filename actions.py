@@ -16,6 +16,7 @@ from rasa_core.events import SlotSet
 from rasa_core.interpreter import RasaNLUInterpreter
 from rasa_core.policies.memoization import MemoizationPolicy
 
+from outcome import predict_outcome 
 #class ActionCheckRestaurants(Action):
  #  def name(self):
       # type: () -> Text
@@ -29,17 +30,16 @@ from rasa_core.policies.memoization import MemoizationPolicy
       #result = db.query(q)
 
       #return [SlotSet("matches", result if result is not None else [])]
-f = []    
+
 
 class ActionPatientInfoRecurrence(Action):
-       
+  
     def name(self):
         return "patient_consultation_info"
         
     def run(self, dispatcher, tracker, domain):
         dispatcher.utter_message("Getting patient depression recurrence../")
-        outcome = predict_outcome()
-        f.append(outcome)
+        rec_info = predict_outcome()
         
 class ActionPatientGeneralInfo(Action):
     def name(self):
@@ -47,11 +47,6 @@ class ActionPatientGeneralInfo(Action):
             
     def run(self, dispatcher, tracker, domain):
         dispatcher.utter_message("Patient's general info")
-        f.append(tracker.get_slot(name))
-        f.append(tracker.get_slot(age))
-        f.append(tracker.get_slot(gender))
-        f.append(tracker.get_slot(history))
-        
         
                     
   
