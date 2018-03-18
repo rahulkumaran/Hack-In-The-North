@@ -90,7 +90,7 @@ def receive_message():
                         send_message(recipient_id, string_temp)
                     else:
                         response_sent_text = get_message()
-                        json_data[recipient_id]['how_long'] = message['message']['text']
+                        # json_data[recipient_id]['how_long'] = message['message']['text']
                         json.dump(json_data, json_file)
                         json_file.close() 
 
