@@ -10,7 +10,7 @@ app = Flask(__name__)
 ACCESS_TOKEN = 'EAAELWqoKdy4BAKRnsbp8kZB6QivZBN46vVla9CTzEHwZCcsAAGQuyA9hLPacPXsUJGZAetuhVTO8nX6HMpEgxFfEuGimZAAGoaPvALO1GpgjrPA4VFoqToNF8HkB6c4GvGDmbS6CsKVSQY3oiz6xSZCCMsGVKX4oEcgoIsTWTSzQZDZD'
 VERIFY_TOKEN = 'VERIFY_TOKEN'
 bot = Bot(ACCESS_TOKEN)
-predefined_responses = ['Hey! Can I know your name?', 'And your age?', 'Gender?', 'How long have you been in depression?']
+predefined_responses = ['Hey! Can I know your name?', 'And your age?', 'Gender?', 'How long have you been in depression(in days)?']
 
 #We will receive messages that Facebook sends our bot at this endpoint 
 @app.route("/", methods=['GET', 'POST'])
