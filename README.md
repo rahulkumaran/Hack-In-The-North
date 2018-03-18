@@ -6,6 +6,6 @@ Also, it'll suggest a treatment for people to overcome depression.<br>
 This bot can be used by doctors as a way to analyse depression and suggest possible treatments.<br><br>
 
 Currently, we'll be suggesting 3 different treatments:<br>
-#### 1) Lithium
+#### 1) Placebo
 #### 2) Imipramine
-#### 3) Placebo
+#### 3) Lithium
