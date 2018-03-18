@@ -13,7 +13,7 @@ from sklearn import linear_model
 
 
 
-def predict_outcome():
+def predict_outcome(recipient_dic):
 	data_input = pd.read_csv("depression.csv")
 	data = data_input[['Time','Age','Gender','AcuteT']]	#The machine learning model will take the following as the inputs to predict
 	
@@ -30,15 +30,21 @@ def predict_outcome():
 	joblib.dump(rf, "models/Outcome_Model", compress = 9)
 	rf = joblib.load("models/Outcome_Model")		#Stores the machine learning model by the name "Outcome_Model"
 
-	time = 32.6 
-	age = 48
-	gender = 2
-	acutet = 284
+	time = 100
+	age = int(recipient_dic['age'])
+	if recipient_dic['gender'] == 'male':
+		gender = 2
+	else:
+		gender = 1
+	acutet = float(recipient_dic['how_long'])
 	outcome = rf.predict([[time,age,gender,acutet]])
-	#print(outcome, accuracy*100)
-	return outcome
 
-
+	# print(outcome, accuracy*100)
+	print(outcome[0])
+	print(accuracy*100)
+	string_temp = "Based on the analysis, the depression metrics are \n 1. The depression is " + str(outcome[0]) + "\n 2. This result is with an accuracy of " +str(accuracy*100)+"%"
+	print(string_temp)
+	return string_temp
 
 def predict_treatment():
 	data_input = pd.read_csv("depression.csv")		#Reading the csv file using pandas
@@ -66,3 +72,5 @@ def predict_treatment():
 	joblib.dump(model, "models/Treatment_Model", compress = 9)	#Stores the machine learning model by the name "Treatment_Model"
 	
 	#print(treat)
+
+# predict_outcome()
