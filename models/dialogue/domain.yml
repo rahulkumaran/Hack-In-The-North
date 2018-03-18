@@ -5,12 +5,18 @@ action_names:
 - utter_goodbye
 - utter_next_question
 - utter_history_question
+- utter_cheer_up
+- patient_consultation_info
+- patient_general_info
 actions:
 - utter_greet
 - utter_happy
 - utter_goodbye
 - utter_next_question
 - utter_history_question
+- utter_cheer_up
+- actions.ActionPatientInfoRecurrence
+- actions.ActionPatientGeneralInfo
 config:
   store_entities_as_slots: true
 entities: []
@@ -21,8 +27,37 @@ intents:
 - mood_deny
 - mood_great
 - mood_unhappy
-slots: {}
+- mood_decline
+slots:
+  acutet:
+    initial_value: null
+    type: rasa_core.slots.TextSlot
+  age:
+    initial_value: null
+    type: rasa_core.slots.TextSlot
+  gender:
+    initial_value: null
+    type: rasa_core.slots.TextSlot
+  history:
+    initial_value: null
+    type: rasa_core.slots.TextSlot
+  name:
+    initial_value: null
+    type: rasa_core.slots.TextSlot
 templates:
+  utter_approve:
+  - text: 'Yes'
+  - text: Ya
+  - text: Yeah
+  - text: Hmmm
+  - text: Yup
+    utter_decline: null
+  - text: 'No'
+  - text: Nope
+  - text: Nah
+  utter_cheer_up:
+  - text: Don't worry. It's going to be alright. Just follow the instructions of the
+      psychiatrist
   utter_goodbye:
   - text: Bye
   utter_greet:

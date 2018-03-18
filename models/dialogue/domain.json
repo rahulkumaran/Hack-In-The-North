@@ -6,12 +6,21 @@
     "intent_mood_deny", 
     "intent_mood_great", 
     "intent_mood_unhappy", 
+    "intent_mood_decline", 
+    "slot_acutet_0", 
+    "slot_age_0", 
+    "slot_gender_0", 
+    "slot_history_0", 
+    "slot_name_0", 
     "prev_action_listen", 
     "prev_action_restart", 
     "prev_utter_greet", 
     "prev_utter_happy", 
     "prev_utter_goodbye", 
     "prev_utter_next_question", 
-    "prev_utter_history_question"
+    "prev_utter_history_question", 
+    "prev_utter_cheer_up", 
+    "prev_patient_consultation_info", 
+    "prev_patient_general_info"
   ]
 }
