@@ -36,7 +36,7 @@ def predict_outcome(recipient_dic):
 		gender = 2
 	else:
 		gender = 1
-	acutet = float(recipient_dic['how_long'])
+	acutet = int(recipient_dic['how_long'])
 	outcome = rf.predict([[time,age,gender,acutet]])
 
 	# print(outcome, accuracy*100)
