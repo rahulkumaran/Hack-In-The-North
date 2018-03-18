@@ -1,30 +1,20 @@
 import pandas as pd
 import numpy as np
-import matplotlib.pyplot as plt
+# import matplotlib.pyplot as plt
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.cross_validation import train_test_split
 pd.options.mode.chained_assignment = None
 import json
 from sklearn.externals import joblib
-import statsmodels.formula.api as smf
+# import statsmodels.formula.api as smf
 import sklearn.metrics as sm
 from math import ceil
 from sklearn import linear_model 
 
 
 
-def predict_outcome():
-			'''
-	This function is basically used to identify and predict
-	whether or not a person might go into depression again.
-	It analyses it by looking at the age, gender,
-	time in depression before coming to meet doctor and also
-	the time for which the person stays in evaluation or the time
-	before which the person goes into depression again
-
-	Everything here is in Integers or Float64.
-			'''
-	data_input = pd.read_csv("depression.csv")		#Reading the csv file using pandas
+def predict_outcome(recipient_dic):
+	data_input = pd.read_csv("depression.csv")
 	data = data_input[['Time','Age','Gender','AcuteT']]	#The machine learning model will take the following as the inputs to predict
 	
 
@@ -40,28 +30,23 @@ def predict_outcome():
 	joblib.dump(rf, "models/Outcome_Model", compress = 9)
 	rf = joblib.load("models/Outcome_Model")		#Stores the machine learning model by the name "Outcome_Model"
 
-	time = 32.6 
-	age = 48
-	gender = 2
-	acutet = 284
+	time = 100
+	age = int(recipient_dic['age'])
+	if recipient_dic['gender'] == 'male':
+		gender = 2
+	else:
+		gender = 1
+	acutet = int(recipient_dic['how_long'])
 	outcome = rf.predict([[time,age,gender,acutet]])
-	#print(outcome, accuracy*100)
-	return outcome
 
-
+	# print(outcome, accuracy*100)
+	print(outcome[0])
+	print(accuracy*100)
+	string_temp = "Based on the analysis, the depression metrics are \n 1. The depression is " + str(outcome[0]) + "\n 2. This result is with an accuracy of " +str(accuracy*100)+"%"
+	print(string_temp)
+	return string_temp
 
 def predict_treatment():
-			'''
-	This function is basically used to identify and predict
-	what kind of treatment is to be given to a patient.
-	It analyses it by looking at the age, gender, recurrence outcome,
-	time in depression before coming to meet doctor and also
-	the time for which the person stays in evaluation or the time
-	before which the person goes into depression again
-
-	Everything here is in Integers or Float64.
-			'''
-
 	data_input = pd.read_csv("depression.csv")		#Reading the csv file using pandas
 	data_input['Treat'].replace('Lithium', 3, inplace = True)
 	data_input['Treat'].replace('Imipramine', 2, inplace = True)
@@ -87,3 +72,5 @@ def predict_treatment():
 	joblib.dump(model, "models/Treatment_Model", compress = 9)	#Stores the machine learning model by the name "Treatment_Model"
 	
 	#print(treat)
+
+# predict_outcome()

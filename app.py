@@ -4,12 +4,13 @@ import random
 from flask import Flask, request
 from pymessenger.bot import Bot
 import json
+import actions
 
 app = Flask(__name__)
 ACCESS_TOKEN = 'EAAELWqoKdy4BAKRnsbp8kZB6QivZBN46vVla9CTzEHwZCcsAAGQuyA9hLPacPXsUJGZAetuhVTO8nX6HMpEgxFfEuGimZAAGoaPvALO1GpgjrPA4VFoqToNF8HkB6c4GvGDmbS6CsKVSQY3oiz6xSZCCMsGVKX4oEcgoIsTWTSzQZDZD'
 VERIFY_TOKEN = 'VERIFY_TOKEN'
 bot = Bot(ACCESS_TOKEN)
-predefined_responses = ['Hey! Can I know your name?', 'And your age?', 'Gender?', 'How long have you been in depression?']
+predefined_responses = ['Hey! Can I know your name?', 'And your age?', 'Gender?', 'How long have you been in depression(in days)?']
 
 #We will receive messages that Facebook sends our bot at this endpoint 
 @app.route("/", methods=['GET', 'POST'])
@@ -45,7 +46,8 @@ def receive_message():
                         "age" : "",
                         "gender" : "",
                         "how_long" : "",
-                        "count" : 0
+                        "count" : 0,
+                        "recurrence" : ""
                     }
                     json_data[recipient_id] = dump_data
                     # Write
@@ -84,13 +86,17 @@ def receive_message():
                         json_data[recipient_id]['how_long'] = message['message']['text']
                         json.dump(json_data, json_file)
                         json_file.close()
-                        send_message(recipient_id, "It's great to know you")
+                        string_temp = "Okay " + json_data[recipient_id]['name'] + "! I'll see what i can do to help you. I'll be calculating the metrics based on your responses"
+                        send_message(recipient_id, string_temp)
                     else:
                         response_sent_text = get_message()
-                        json_data[recipient_id]['how_long'] = message['message']['text']
+                        # json_data[recipient_id]['how_long'] = message['message']['text']
                         json.dump(json_data, json_file)
-                        json_file.close()
-                        send_message(recipient_id, response_sent_text)
+                        json_file.close() 
+
+                        string_temp = actions.predict_outcome(json_data[recipient_id])
+                        send_message(recipient_id, string_temp)
+                        
                         # file_object = open('user.json','r')
                         # json_data = json.load(file_object)
                         # file_object.close()
