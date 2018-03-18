@@ -1,13 +1,10 @@
 slots:
   name:
     type: text
-    value: "Mike"
   age:
     type: text
-    value: "36"
   gender:
     type: text
-    value: 
   history:
     type: text
   acutet:
@@ -20,7 +17,6 @@ intents:
   - mood_deny
   - mood_great
   - mood_unhappy
-  - mood_affirm
   - mood_decline
   
 actions:
@@ -30,8 +26,6 @@ actions:
 - utter_next_question
 - utter_history_question
 - utter_cheer_up
-- utter_how_long
-- utter_fetching
 - utter_acutet
 - actions.ActionPatientInfoRecurrence
 - actions.ActionPatientGeneralInfo
