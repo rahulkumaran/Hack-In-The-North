@@ -45,7 +45,8 @@ def receive_message():
                         "age" : "",
                         "gender" : "",
                         "how_long" : "",
-                        "count" : 0
+                        "count" : 0,
+                        "recurrence" : ""
                     }
                     json_data[recipient_id] = dump_data
                     # Write
