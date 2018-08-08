@@ -5,7 +5,7 @@ Also, it'll suggest a treatment for people to overcome depression.<br>
 
 This bot can be used by doctors as a way to analyse depression and can suggest possible treatments too.<br><br>
 
-The bot can be one's best friend as you can share whatever you want here.<br>
+The bot can be one's best friend as you can share whatever you want here<br>
 
 Here we're using Rasa.ai for the nlp part. We've also created a messenger bot for proper analysis of data.<br><br>
 Currently, we'll be suggesting 3 different treatments:<br>
