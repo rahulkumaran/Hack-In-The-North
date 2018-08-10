@@ -1,6 +1,7 @@
 # HINT 3.0 Hack
 ## Anti Depressant Bot
 This bot analyses whether one is depressed or not, and if one actually is depressed then it'll try to determine whether that person will suffer from depression again.<br>
+
 Also, it'll suggest a treatment for people to overcome depression.<br>
 
 This bot can be used by doctors as a way to analyse depression and can suggest possible treatments too.<br><br>
