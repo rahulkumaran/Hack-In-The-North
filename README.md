@@ -10,9 +10,9 @@ The bot can be one's best friend as you can share whatever you want here<br>
 
 Here we're using Rasa.ai for the nlp part. We've also created a messenger bot for proper analysis of data.<br><br>
 Currently, we'll be suggesting 3 different treatments:<br>
-#### 1) Placebo
-#### 2) Imipramine
-#### 3) Lithium
+### 1) Placebo
+### 2) Imipramine
+### 3) Lithium
 
 ### Some commands that are being used to train and run the bot using rasa:
     To install dependencies, use the following command:
